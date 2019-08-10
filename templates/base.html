@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> 
+      
+         The TechBlogger &reg;
+    
+    </title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,600"
+      rel="stylesheet">
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    
+  </head>
+
+  <body>
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 17px;
+        background-color:#008080;
+      }
+       .btn-danger {
+        color: #fff;
+        background-color: #008080;
+        border-color:#008080;
+      } 
+     
+     .masthead {
+              background: #008080;
+              height: auto;
+              padding-bottom: 15px;
+              padding-top: 10px;
+    }
+    </style>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow" id="mainNav">
+      <div class="container-fluid">
+        <a class="navbar-brand" 
+           href="{% url 'home' %}" >
+          <strong> <kbd>The TechBlogger &reg;</kbd></strong> </a>
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+       
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item text-black">
+              <a
+                class="navbar-brand"
+                href="#"
+                ><kbd>About</kbd></a
+              >
+            </li>
+            <li class="nav-item text-black">
+              <a
+                class="navbar-brand"
+                href="#"
+                ><kbd>Policy</kbd></a
+              >
+            </li>
+            <li class="nav-item text-black">
+              <a
+                class="navbar-brand"
+                href="#"
+                ><kbd>Contact</kbd></a
+              >
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </nav>
+    
+
+            {% block content %} 
+          <!-- Content Goes here -->
+            {% endblock content %}
+            
+    
+    <!-- Footer -->
+    <footer class="py-3 bg-grey">
+              <p class="m-0 text-light bg-dark text-center">Copyright - The TechBlogger &reg;</p>
+              <p class="m-0 text-light bg-dark text-center ">All rights reserved by The TechBlogger &reg;</p>
+    </footer>
+    
+  </body>
+</html>

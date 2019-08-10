@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+      
+ {% block content %}
+<style>
+    
+    body {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        background-color:#008080;
+    }
+
+    .head_text{
+    color: #fdfdfd;
+  }
+     
+
+</style>
+
+<script>
+alert('Hey! Welcome to The TechBlog.') 
+</script>
+
+    <header class="masthead" >
+            <div class="overlay"></div>
+            <div class="container">
+              <div class="row">
+                <div class=" col-md-8 col-md-10 mx-auto">
+                  <div class="site-heading">
+                    <h2 class="site-heading my-2 mt-2"><Strong>Welcome To The TechBlogger &reg;</Strong></h2>
+                    <p class="my-2 mt-2"> <strong> <a class="btn btn-dark" href = "##"> Subscribe </a> to our newsletter and always remain ahead of the Tech Curve.</strong> 
+                    </p>
+                    <br>
+                </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+              </header>
+        
+<div class="container">
+  <!-- This is the admin login section! -->
+    <a class= "btn btn-dark btn-block" href="/admin"> Admin Login (Click Here)
+    </a>       
+    <div class="row">
+      
+ <!-- Blog Entries Column -->
+  <div class="col-md-15 mt-5 left">
+    {% for post in post_list %}
+      <div class="card mb-4" >
+        <div class="card-body">
+          <h2 class="card-title">{{ post.title }}</h2>
+            <p class="card-text text-muted h6"> {{ post.author }} | {{ post.created_on}} </p>
+
+              <p class="card-text">{{post.content|slice:":270" }}</p>
+                <a href="{% url 'post_detail' post.slug  %}" class="btn btn-dark btn-block">Read More</a>
+                  </div>
+                 
+                </div>
+                {% endfor %}
+            </div>
+            {% block sidebar %} 
+            {% include 'sidebar.html' %} 
+            {% endblock sidebar %}     
+            </div>
+        </div>
+
+<!--For Pagination Purpose: -->
+{% if is_paginated %}
+  <nav aria-label="Page navigation conatiner"></nav>
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link"> &laquo; Previous </a></li>
+    {% endif %}
+
+    {% if page_obj.has_next %}
+    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> Next &raquo;</a></li>
+
+    {% endif %}
+  </ul>
+  </nav>
+</div>
+{% endif %}
+
+{%endblock%}
+
